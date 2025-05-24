@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIAO</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+</head>
+
+<body>
+    <header>
+        <navbar>
+            <ul>
+                <li><a href="javascript:void(0);" onclick="showContent('home')">HOME</a></li>
+                <li><a href="javascript:void(0);" onclick="showContent('about')">ABOUT US</a></li>
+                <li><a href="javascript:void(0);" onclick="showContent('articles')">ARTICLES</a></li>
+                <li><a href="javascript:void(0);" onclick="showContent('Map')">MAP</a></li>
+                <li><a href="javascript:void(0);" onclick="showContent('research')"> OUR RESEARCH</a></li>
+                <li><a href="javascript:void(0);" onclick="showContent('prototype')">OUR PROTOTYPE</a></li>
+                <li><a href="javascript:void(0);" onclick="showContent('contact')">CONTACT</a></li>
+            </ul>
+        </navbar>
+    </header>
+    <main>
+        <!--home-->
+        <div id="home" class="content" style="display:none;">
+            <div class="logo-title">
+                <img src="logo.png" alt="Logo">
+                <h1 class="title">Because Every Cat Matters.</h1>
+            </div>
+            <div class="home-columns">
+                <div class="column about-preview">
+                    <h2>ABOUT US</h2>
+                    <p>We use innovation and compassion to protect and support stray cats through smart shelters, informative tools, and community-driven care.</p>
+                    <a href="javascript:void(0);" onclick="showContent('about')">Learn more →</a>
+
+                    <h2>OUR PROTOTYPE</h2>
+                    <p>We developed an innovative smart cat shelter prototype that can be used to protect and monitor stray cats that need our special attention. </p>
+                    <a href="javascript:void(0);" onclick="showContent('prototype')">Learn more →</a>   
+                    <h2> OUR RESEARCH</h2>
+                    <p> How did we determine what affects stray cat distribution? Check out our reasoning, our sources, and our processed data.</p>
+                    <a href="javascript:void(0);" onclick="showContent('research')">Learn more →</a>
+                </div>
+                <div class="column cat-info">
+                    <h2> WHAT ARE STRAY CATS?</h2>
+                    <p>Stray cats are domestic cats that have been abandoned or lost. They often form colonies and can be found in urban areas.</p>
+                    <a href="javascript:void(0);" onclick="showContent('articles')">Read articles →</a>
+                    
+                    <h2>WHY STRAY CATS MATTER</h2>
+                    <p>Stray cats play a vital role in urban ecosystems but face risks without support. Understanding their needs is the first step toward change.</p>
+                    <a href="javascript:void(0);" onclick="showContent('articles')">Read articles →</a>
+
+                    <h2>HOW TO HELP STRAY CATS</h2>
+                    <p>There are many ways to help stray cats, including providing food, water, and shelter, as well as supporting local TNR programs.</p>
+                    <a href="javascript:void(0);" onclick="showContent('articles')">Read articles →</a>
+                </div>
+                <div class="column map-info">
+                    <h2>Check Out Our Map!</h2>
+                    <p>We mapped the distribution of stray cats across the city so individuals and organizations that want to help know where to start. 
+                        The map is interactive and allows you to filter by different factors such as population density, housing density, and more. </p>
+                    </p>
+                    <img src="map preview.png" alt="Map Preview">
+                    <a href="javascript:void(0);" onclick="showContent('Map')">Check it Out →</a>
+                </div>
+            </div>
+        </div>
+
+        <!--about us-->
+        <div id="about" class="content" style="display:none;">
+            <h1>Who Are We?</h1>
+            <div class="columns">
+                <div class="normal-column">
+                    <h2>Our Mission</h2>
+                    <p>Through accessible information, interactive tools, and innovative smart shelter technology, MIAO empowers communities to 
+                understand, protect, and care for stray feline populations. By combining compassion with data-driven solutions, we aim 
+                to build a more humane and connected urban environment—for cats and for us all. </p>
+                </div>
+                <div class="normal-column">
+                    <h2>Our Services</h2>
+                    <p>We offer interactive tools and informative articles to spread awareness about the stray cat community. 
+                        We also developed an innovative smart cat shelter prototype that can be used to protect and monitor stray cats that need our special attention. </p>
+                    <p>Our services include:</p>
+                    <ul>
+                        <li>Interactive map of stray cat locations</li>
+                        <li>Informative articles on stray cat care</li>
+                        <li>Smart shelter technology</li>
+                    </ul>
+                </div>
+            </div>
+            <h2> Team Members Introduction</h2>
+            <ul>
+                <li> <b>Letitia Lai - Team Leader, Article Writer</b></li>
+                <p> Letitia is the one who identified this pressing issue. 
+                    Not only does she coordinate our team members, but she researched and wrote all of our articles. </p>
+                <li><b>Nicole Chen - Social Media Manager, Data Researcher</b> </li>
+                <p> Nicole manages our WeChat official account and creates surveys for understanding the Shanghai public's perception of the issue.
+                    She tried reaching out to existing local organizations, but it has been difficult to find legitimate ones.
+                </p>
+                <li><b>Sophia Lu - Data Researcher & Analyst, Map Modeller </b></li>
+                <p> To model the stray cat distribution in the metropolitican city of Shanghai, Sophia read and analyzed numerous previous studies on it to identify
+                    the factors involved. She then used official government data to create a ranking system for the different districts in Shanghai based on these factors, 
+                    which was implemented on the map. 
+                </p>
+                <li><b>Jessica Li - Website UI & Logo Designer </b></li>
+                <p>Jessica designed our website and logo. She is also in charge of the overall aesthetic of our project.</p>
+                <li><b>Joanna Jiang - Engineer </b></li>
+                <p> Joanna combined physics, engineering, and computer science to create a working prototype of a smart shelter for stray cats. 
+                    Due to limited time and funds, we were unable to test it on real cats or distribute it, but our planned functions have all been implemented.
+                </p>
+                <li><b>Peiying Kam - Programmer</b></li>
+                <p> Peiying programmed the entirety of this website and the map and wrote all the introductory content, including this introduction.</p>
+            </ul>
+        </div>
+
+        <!--articles-->
+        <div id="articles" class="content" style="display:none;">
+            <h1 class="title">ARTICLES</h1>
+            <div class="article-columns">
+                <div class="article-column">
+                    <h2> The Meow Around the Corner </h2>
+                    <h3> Written By Letitia Lai</h3>
+                    <img src="cat1.jpg" alt="Cat 1">
+                    <p> It was faint at first. A small whisper, the smallest squeak. So small you could have simply imagined it, 
+                        but as you turn the corner,eyes drifting—maybe intentionally, maybe unintentionally—onto the patches of 
+                        greenery beside the road, you see a flash of ginger. </p>
+                    <p>There’s some rustling; the shrubbery is shifting. You move closer, crouch down, and among the small specks 
+                        of sunlight filtered through the branches you see a pair of wide yellow eyes. </p>
+                    <p>Ladies and gentlemen, we present to you: the stray cat. *cue the classical introductory music*</p>
+                    <a href="https://mp.weixin.qq.com/s/5GW4UBxcYPvDEYKLNjASQA" target="_blank"> Read the Full Article </a>
+                </div>
+                <div class="article-column">
+                    <h2> TNR -- What Is It, and Why Do We Need It? </h2>
+                    <h3>Written By Letitia Lai</h3>
+                    <img src="tnr.jpg" alt="TNR">
+                    <p> And then there’s a screech that arises from the night. Followed by another, and perhaps another. 
+                        Rest assured—it is more likely that it is mating season for the cats than there is a ghost in your 
+                        neighborhood. </p>
+                    <p>Spanning from February to October, mating season for cats is a period in which female, called the queen,
+                         will go into heat multiple times from rising levels of the hormone estrogen until end of breeding season </p>
+                    <p> Standing for Trap, Neuter, and Release, the TNR process is a system of stages in both neutering the stray cat 
+                        and ensuring a smooth transition back to their original environment.</p>
+                    <a href="https://mp.weixin.qq.com/s/xXKIU99da32IGWLlEXjggA" target="_blank"> Read the Full Article </a>
+                </div>
+            </div>
+        </div>   
+
+        <!--services-->
+        <div id="prototype" class="content" style="display:none;">
+            <h1>Our Prototype</h1>
+            <h2> Demo Videos </h2>
+            <div class="columns">
+                <div class="normal-column">
+                    <h3> Detailed Components and Functions </h3>
+                    <video controls width="400" height="300">
+                        <source src="detailed components and functions.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="normal-column">
+                    <h3> Complete Product and Future Work </h3>
+                    <video controls width="400" height="300">
+                        <source src="product and future work.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="normal-column">
+                    <h3> Closeups of Prototype Design</h3>
+                    <video controls width="200" height="300">
+                        <source src="closeup 1.mp4" type="video/mp4">
+                    </video>
+                    <video controls width="200" height="300">
+                        <source src="closeup 2.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>  
+            <div class="columns">
+                <div class="columns">
+                    <div class="normal-column">
+                        <h2> Pictures of the Prototype </h2>
+                        <img width="300" src="prototype 1.jpg" alt="Prototype 1">
+                    </div>
+                    <div class="normal-column">
+                        <h2> Components </h2>
+                        <ul>
+                            <li>ESP32-CAM</li>
+                            <li>Arduino UNO</li>
+                            <li>Type-A USB Cable</li>
+                            <li>Male-to-Female Dupont Wires</li>
+                            <li>DHT11 Temperature and Humidity Sensor</li>
+                            <li>HX711 Weight Sensor</li>
+                            <li>SG90 9g 180° Servo</li>
+                            <li>Water Depth Detector</li>
+                            <li>IIC OLED Display</li>
+                            <li>Water Pump</li>
+                            <li>Stainless Steel Bowl</li>
+                            <li>Cushion</li>
+                            <li>3L Plastic Container</li>
+                        </ul>
+                        <h2> Key Functions </h2>
+                        <ul>
+                            <li>Real-time water level monitoring</li>
+                            <li>Automatic water refill when level is low</li>
+                            <li>Real-time temperature and humidity monitoring</li>
+                            <li>Real-time cat food quantity monitoring</li>
+                            <li>Automatic food replenishment when supply is low</li>
+                            <li>Temperature and humidity monitoring and display</li>
+                            <li>Real-time camera surveillance of cat activities</li>
+                        </ul>
+                    </div>
+                </div>    
+                <div class="normal-column">
+                    <h2> Designing Process </h2>
+                    <h3> Exterior Designing Process</h3>
+                    <ul>
+                        <li>Drafting sketches</li>
+                        <li>Preliminary dimension calculations and cutting of PVC foam boards</li>
+                        <li>Assembly using a hot glue gun</li>
+                        <li>Adding structural reinforcements for stability and load-bearing capacity</li>
+                        <li>Ensuring partial detachability for future development</li>
+                    </ul>
+                    <h3> Implementation of Water and Food Dispensing Functions</h3>
+                    <ul>
+                        <li>Repurposing cut plastic bottles as water and food containers</li>
+                        <li>Fabricating additional components (e.g., rotating discs, food chutes)</li>
+                        <li>Developing Arduino C control programs</li>
+                        <li>Parameter adjustment</li>
+                    </ul>
+                    <h3> Camera-Related Development Process</h3>
+                    <ul>
+                        <li>
+                            Initial attempt at cat face recognition:
+                            <ul>
+                            <li>
+                                Trial deployment of existing solutions
+                                <ul>
+                                <li>Failed due to legacy environment setup issues</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Attempted alternative solutions
+                                <ul>
+                                <li>Failed due to insufficient data and environment configuration challenges</li>
+                                </ul>
+                            </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Reassessment of objectives under practical constraints:
+                            <ul>
+                            <li>Prioritized monitoring functionality over recognition</li>
+                            <li>Adopted an IoT camera solution</li>
+                            </ul>
+                        </li>
+                        <li>Implemented a LANm-based remote monitoring solution</li>
+                        <li>
+                            Explored intranet penetration as an extension:
+                            <ul>
+                            <li>Researched and tested mainstream intranet penetration solutions</li>
+                            <li>
+                                Identified limitations of existing simple solutions:
+                                <ul>
+                                <li>Failed due to display logic constraints in local network monitoring</li>
+                                </ul>
+                            </li>
+                            <li>Evaluated alternative intranet penetration solutions for future consideration</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--map-->
+
+        <div id="Map" class="content" style="display:none;">
+            <h1>STRAY CAT DISTRIBUTION</h1>
+            <h2> The Map</h2>
+            <p> Filter by different factors to customize based on what you think affects stray cats' distribution the most! 
+                Or just leave it all on to see the overall ranking we generated. </p>
+            <div id="filter-bar">
+                <label><input type="checkbox" class="factor-checkbox" value="popDensity" checked> Population Density</label>
+                <label><input type="checkbox" class="factor-checkbox" value="hDensity" checked> Housing Density</label>
+                <label><input type="checkbox" class="factor-checkbox" value="rehDensity" checked> Residential Housing Density</label>
+                <label><input type="checkbox" class="factor-checkbox" value="GDP" checked> GDP per Capita</label>
+                <label><input type="checkbox" class="factor-checkbox" value="edu" checked> Education</label>
+                <label><input type="checkbox" class="factor-checkbox" value="health" checked> Healthcare </label>
+            </div>
+            <div id="map"></div>
+        </div>
+
+        <div id="research" class="content" style="display:none;">
+            <h1>What affects the distribution of stray cats in cities?</h1>
+        </div>
+        <script src="js/script.js"></script>
+        <script src="js/map.js"></script>
+    </main>
+</body>

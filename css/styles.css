@@ -1,0 +1,191 @@
+body {
+    font-family: "Josefin Sans", sans-serif; /* Use the Josefin Sans font */
+    background-color: #ffffff;
+    margin: 20px;
+    padding: 10px;
+}
+header {
+    background-color: #000000;
+    color: white;
+    padding: 10px 0;
+    text-align: left;
+}
+main {
+    padding: 20px;
+}
+h1 {
+    font-size: 50px;
+    color: #000000;
+    text-align: left;
+}
+p {
+    font-size: 18px;
+    color: #000000;
+}
+footer {
+    text-align: center;
+    background-color: #222;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+navbar {
+    display: flex; /* Use flexbox */
+    justify-content: flex-end; /* Align items to the right */
+    padding: 10px 20px; /* Add some padding around the navbar */
+}
+navbar a {
+    color: white; /* White text */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Space out the links */
+    margin-left: 20px; /* Add space between links */
+}
+navbar a:hover {
+    background-color: #ddd; /* Light background on hover */
+    color: black; /* Dark text on hover */
+}
+navbar ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 20px; /* Add space on the left */
+    margin-right: 20px; /* Add space on the right */
+    display: flex;
+}
+navbar li {
+    position: relative; /* Required for positioning the dropdown */
+}
+.title {
+    text-align: center;
+    padding: 20px;
+    color: #000000;
+}
+
+#map {
+    height: 400px; 
+}
+
+.logo-title {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.logo-title img {
+  width: 300px;
+  height: auto;
+}
+
+.logo-title h1 {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: #333;
+}
+
+.home-columns {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1rem;
+  margin: auto;
+}
+
+.column {
+  flex: 1;
+  background-color: #b4d0ff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.about-preview {
+    background-color:#9efff9
+}
+
+.column:hover {
+  transform: translateY(-5px);
+}
+
+.column h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.column a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #317873;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.column img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px; /* optional: for a nice rounded look */
+}
+
+.article-columns {
+  display: flex;
+  gap: 2rem; /* space between columns */
+  align-items: flex-start;
+  padding: 1rem;
+  margin: auto;
+}
+
+.article-column {
+    background-color: rgb(255, 206, 147);
+    flex = 1;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+.article-column:hover {
+    transform: translateY(-5px);
+}
+
+.article-column h2 {
+    margin-bottom: 0.75rem;
+    font-size: 2rem;
+}
+
+.article-column a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #317873;
+  text-decoration: none;
+  font-weight: bold;
+}
+.article-column img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px; /* optional: for a nice rounded look */
+}
+
+
+#filter-bar {
+    display: flex;
+    gap: 12px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+  }
+
+
+.columns{
+    display: flex;
+    gap: 2rem; /* space between columns */
+    margin: auto;
+}
+
+.normal-column {
+   flex: 1;
+}
