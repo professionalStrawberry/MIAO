@@ -49,7 +49,6 @@ Promise.all([
   weights = weightData;
 });
 
-
 // function rankToColor(avgRank) {
 //   const breaks = [5, 6, 7, 8, 9, 10, 11, 12];
 //   if (avgRank <= breaks[0]) return "#7f2704";
