@@ -8,7 +8,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 function style(feature) {
   const districtName = feature.properties.name;
   return {
-    fillColor: getColor(districtName, selectedFilters),
+    fillColor: getColor(districtName),
     weight: 1,
     opacity: 1,
     color: 'white',
@@ -38,64 +38,157 @@ fetch('js/shanghai.geojson')
 
 
 
-const data = {
-  "浦东新区": { overallRank: 9.055555556, factors: { popDensity: 10, hDensity: 10, rehDensity: 10, GDP: 12, edu: 9, health: 13 } },
-  "黄浦区": { overallRank: 7.861111111, factors: { popDensity: 3, hDensity: 1.5, rehDensity: 3, GDP: 16, edu: 12, health: 1 } }, 
-  "徐汇区": { overallRank: 8.527777778, factors: { popDensity: 5, hDensity: 4.5, rehDensity: 5, GDP: 15, edu: 11, health: 3 } },
-    "长宁区": { overallRank: 8.5, factors: { popDensity: 7, hDensity: 6, rehDensity: 6, GDP: 14, edu: 15, health: 4 } },
-    "静安区": { overallRank: 6.916666667, factors: { popDensity: 2, hDensity: 1.5, rehDensity: 2, GDP: 13, edu: 9 , health: 2 } },
-    "普陀区": { overallRank: 5.527777778, factors: { popDensity: 4, hDensity: 4.5, rehDensity: 4, GDP: 4, edu: 13, health: 6 } },
-    "虹口区": { overallRank: 6.277777778, factors: { popDensity: 1, hDensity: 3, rehDensity: 1, GDP: 11, edu: 7, health: 5 } },
-    "杨浦区": { overallRank: 8, factors: { popDensity: 6, hDensity: 7, rehDensity: 7, GDP: 10, edu: 14, health: 7 } },
-    "闵行区": { overallRank: 7.888888889, factors: { popDensity: 9, hDensity: 8, rehDensity: 9, GDP: 5, edu: 5, health: 11 } },
-    "宝山区": { overallRank: 7.277777778, factors: { popDensity: 8, hDensity: 9, rehDensity: 8, GDP: 2, edu: 1, health: 12 } },
-    "嘉定区": { overallRank: 9.833333333, factors: { popDensity: 11, hDensity: 11, rehDensity: 11, GDP: 9, edu: 4, health: 10 } },
-    "金山区": { overallRank: 11.55555556, factors: { popDensity: 15, hDensity: 15, rehDensity: 15, GDP: 8, edu: 7, health: 8 } },
-    "松江区": { overallRank: 8.75, factors: { popDensity: 12, hDensity: 12.5, rehDensity: 12, GDP: 3, edu: 1, health: 16 } },
-    "青浦区": { overallRank: 10.38888889, factors: { popDensity: 13, hDensity: 13, rehDensity: 14, GDP: 6, edu: 5, health: 11 } },
-    "奉贤区": { overallRank: 10.36111111, factors: { popDensity: 14, hDensity: 13.5, rehDensity: 13, GDP: 7, edu: 3, health: 15 } },
-    "崇明区": { overallRank: 9.611111111, factors: { popDensity: 16, hDensity: 16, rehDensity: 16, GDP: 1, edu: 16, health: 11 } }
-};  
+let data = {};
+let weights = {};
 
-function getColor(districtName, selectedFactors) {
-    const district = data[districtName];
-  // Default to overallRank if no filter selected
-  let avgRank;
-  if (!selectedFactors || selectedFactors.length === 0) {
-    avgRank = district.overallRank;
-  } else {
-    const sum = selectedFactors.reduce((acc, factor) => acc + district.factors[factor], 0);
-    avgRank = sum / selectedFactors.length;
+Promise.all([
+  fetch('js/rankings.json').then(res => res.json()),
+  fetch('js/weights.json').then(res => res.json())
+]).then(([rankingData, weightData]) => {
+  data = rankingData;
+  weights = weightData;
+});
+
+
+// function rankToColor(avgRank) {
+//   const breaks = [5, 6, 7, 8, 9, 10, 11, 12];
+//   if (avgRank <= breaks[0]) return "#7f2704";
+//   if (avgRank <= breaks[1]) return "#a23503";
+//   if (avgRank <= breaks[2]) return "#d94801";
+//   if (avgRank <= breaks[3]) return "#fa8331";
+//   if (avgRank <= breaks[4]) return "#fd9a4e";
+//   if (avgRank <= breaks[5]) return "#fdcb9b";
+//   if (avgRank <= breaks[6]) return "#feeddc";
+//   return "#fff5eb";
+// }
+
+// function getColor(districtName) {
+//   const district = data[districtName];
+//   let weightedSum = 0;
+//   let totalWeight = 0;
+
+//   // First, compute the total weight including subweights
+//   for (const factor in weights) {
+//     const factorWeight = weights[factor];
+
+//     if (typeof factorWeight === 'number') {
+//       totalWeight += factorWeight;
+//     } else if (typeof factorWeight === 'object') {
+//       totalWeight += factorWeight.weight;
+//     }
+//   }
+
+//   // Now apply normalized weights
+//   for (const factor in weights) {
+//     const factorWeight = weights[factor];
+
+//     if (typeof factorWeight === 'number') {
+//       const value = district.factors[factor] || 0;
+//       const normWeight = factorWeight / totalWeight;
+//       weightedSum += value * normWeight;
+//     } else if (typeof factorWeight === 'object') {
+//       const compositeWeight = factorWeight.weight;
+//       const subweights = factorWeight.subweights;
+
+//       // Normalize subweights
+//       let subWeightSum = 0;
+//       for (const sub in subweights) {
+//         subWeightSum += subweights[sub];
+//       }
+
+//       let compositeValue = 0;
+//       if (subWeightSum > 0) {
+//         for (const sub in subweights) {
+//           const subVal = district.factors[factor]?.[sub] || 0;
+//           const subWeight = subweights[sub];
+//           compositeValue += subVal * (subWeight / subWeightSum);  // normalize subweights
+//         }
+//       }
+
+//       const normWeight = compositeWeight / totalWeight;
+//       weightedSum += compositeValue * normWeight;
+//     }
+//   }
+
+//   return rankToColor(weightedSum); // still use your breakpoints
+// }
+
+
+// function updateMapWithFilters() {
+//   geojsonLayer.setStyle(style); // Reapply style with new filters
+// }
+
+function getColorScoreOnly(districtName) {
+  const district = data[districtName];
+  let weightedSum = 0;
+  let totalWeight = 0;
+
+  for (const factor in weights) {
+    const factorWeight = weights[factor];
+
+    if (typeof factorWeight === 'number') {
+      weightedSum += (district.factors[factor] || 0) * factorWeight;
+      totalWeight += factorWeight;
+    } else if (typeof factorWeight === 'object') {
+      const subweights = factorWeight.subweights;
+      const compositeWeight = factorWeight.weight;
+      let compositeValue = 0, subWeightSum = 0;
+
+      for (const sub in subweights) {
+        compositeValue += (district.factors[factor]?.subfactors?.[sub] || 0) * subweights[sub];
+        subWeightSum += subweights[sub];
+      }
+
+      if (subWeightSum > 0) compositeValue /= subWeightSum;
+      weightedSum += compositeValue * compositeWeight;
+      totalWeight += compositeWeight;
+    }
   }
-
-  // Color scale (Oranges_r for reversed depth)
-  const breaks = [5, 6, 7, 8, 9, 10, 11, 12];
-  if (avgRank <= breaks[0]) return "#7f2704";
-  if (avgRank <= breaks[1]) return "#a23503";
-  if (avgRank <= breaks[2]) return "#d94801";
-  if (avgRank <= breaks[3]) return "#fa8331";
-  if (avgRank <= breaks[4]) return "#fd9a4e";
-  if (avgRank <= breaks[5]) return "#fdcb9b";
-  if (avgRank <= breaks[6]) return "#feeddc";
-  return "#fff5eb";
+  return totalWeight > 0 ? weightedSum / totalWeight : 0;
 }
-
-let selectedFilters = [];
-
-function getSelectedFactorsFromUI() {
-  const checkboxes = document.querySelectorAll('.factor-checkbox');
-  return Array.from(checkboxes)
-              .filter(checkbox => checkbox.checked)
-              .map(checkbox => checkbox.value);
-}
+let quantileThresholds = [];
 
 function updateMapWithFilters() {
-  selectedFilters = getSelectedFactorsFromUI();
-  geojsonLayer.setStyle(style); // Reapply style with new filters
+  const scores = Object.keys(data).map(getColorScoreOnly).sort((a, b) => a - b);
+  const n = scores.length;
+
+  quantileThresholds = [];
+  const steps = 8;
+  for (let i = 1; i < steps; i++) {
+    const index = Math.floor((i / steps) * n);
+    quantileThresholds.push(scores[index]);
+  }
+
+  geojsonLayer.setStyle(style);  // refresh styles
 }
 
-// Add event listener to each checkbox
-document.querySelectorAll('.factor-checkbox').forEach(checkbox => {
-  checkbox.addEventListener('change', updateMapWithFilters);
-});
+function rankToColor(score) {
+  if (score <= quantileThresholds[0]) return "#fff5eb";
+  if (score <= quantileThresholds[1]) return "#feeddc";
+  if (score <= quantileThresholds[2]) return "#fdcb9b";
+  if (score <= quantileThresholds[3]) return "#fd9a4e";
+  if (score <= quantileThresholds[4]) return "#fa8331";
+  if (score <= quantileThresholds[5]) return "#d94801";
+  if (score <= quantileThresholds[6]) return "#a23503";
+  return "#7f2704";
+}
+
+function getColor(districtName) {
+  const score = getColorScoreOnly(districtName);
+  return rankToColor(score);
+}
+
+function updateWeight(factor, value, isComposite = false) {
+  if (isComposite) {
+    weights[factor].weight = parseFloat(value);
+  } else {
+    weights[factor] = parseFloat(value);
+  }
+  updateMapWithFilters();
+}
+
+function updateSubWeight(factor, subfactor, value) {
+  weights[factor].subweights[subfactor] = parseFloat(value);
+  updateMapWithFilters();
+}
 

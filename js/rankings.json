@@ -1,0 +1,360 @@
+{
+  "浦东新区": { "factors": 
+    { "popDensity": 10, 
+    "hDensity": 10, 
+    "rehDensity": 10, 
+    "GDP": 12, 
+    "edu": {
+        "value": null,
+        "subfactors": {
+            "areaDensity": 7, 
+            "enrollment": 8, 
+            "fsRatio": 10
+            }
+            }, 
+    "health": {
+        "value": null,
+        "subfactors": {
+            "doctorA": 3,
+            "hosDensity": 7,
+            "bedA": 2
+                } 
+            } 
+        }
+    },
+  "黄浦区": {"factors": 
+    { "popDensity": 3, 
+    "hDensity": 1.5, 
+    "rehDensity": 3, 
+    "GDP": 16, 
+    "edu": {
+        "value": null,
+        "subfactors": {
+            "areaDensity": 16, 
+            "enrollment": 6, 
+            "fsRatio": 1
+            }
+            },
+    "health": { 
+        "value": null,
+        "subfactors": {
+            "doctorA": 16,
+            "hosDensity": 16,
+            "bedA": 16
+                } 
+            } 
+        }
+    }, 
+  "徐汇区": { "factors": 
+    { "popDensity": 5, 
+    "hDensity": 4.5, 
+    "rehDensity": 5, 
+    "GDP": 15, "edu": {
+        "value": null,
+        "subfactors": {
+            "areaDensity": 13, 
+            "enrollment": 5, 
+            "fsRatio": 6
+            }
+            },
+    "health": { 
+        "value": null,
+        "subfactors": {
+            "doctorA": 15,
+            "hosDensity": 12,
+            "bedA": 14
+                } 
+            } 
+        }
+    },
+    "长宁区": {"factors": 
+    { "popDensity": 7,
+     "hDensity": 6, 
+     "rehDensity": 6, 
+     "GDP": 14, 
+     "edu": {
+        "value": null,
+        "subfactors": {
+            "areaDensity": 10, 
+            "enrollment": 1, 
+            "fsRatio": 5
+            }
+            },
+    "health": { 
+        "value": null,
+        "subfactors": {
+            "doctorA": 12,
+            "hosDensity": 14,
+            "bedA": 12
+                } 
+            } 
+        }
+    },
+    "静安区": {"factors": 
+    { "popDensity": 2, 
+    "hDensity": 1.5, 
+    "rehDensity": 2, 
+    "GDP": 13, 
+    "edu": {
+        "value": null,
+        "subfactors": {
+            "areaDensity": 14, 
+            "enrollment": 9, 
+            "fsRatio": 2
+                }
+            },
+    "health": { 
+        "value": null,
+        "subfactors": {
+            "doctorA": 14,
+            "hosDensity": 15,
+            "bedA": 15
+                } 
+            } 
+        }
+    },
+    "普陀区": {"factors": 
+    { "popDensity": 4, 
+    "hDensity": 4.5, 
+    "rehDensity": 4, 
+    "GDP": 4, 
+    "edu": {
+        "value": null,
+        "subfactors": {
+            "areaDensity": 11, 
+            "enrollment": 3, 
+            "fsRatio": 8
+            }
+            },
+    "health": { 
+        "value": null,
+        "subfactors": {
+            "doctorA": 10,
+            "hosDensity": 10,
+            "bedA": 8
+                } 
+            } 
+        }
+    },
+    "虹口区": {"factors": 
+    { "popDensity": 1, 
+    "hDensity": 3, 
+    "rehDensity": 1, 
+    "GDP": 11, 
+    "edu": {
+        "value": null,
+        "subfactors": {
+            "areaDensity": 15, 
+            "enrollment": 7, 
+            "fsRatio": 4
+            }
+            },
+    "health": { 
+        "value": null,
+        "subfactors": {
+            "doctorA": 13,
+            "hosDensity": 13,
+            "bedA": 13
+                } 
+            } 
+        }
+     },
+    "杨浦区": { "factors": 
+    { "popDensity": 6, 
+    "hDensity": 7, 
+    "rehDensity": 7,
+     "GDP": 10, 
+     "edu": {
+        "value": null,
+        "subfactors": {
+            "areaDensity": 12, 
+            "enrollment": 2, 
+            "fsRatio": 7
+            }
+            },
+    "health": { 
+        "value": null,
+        "subfactors": {
+            "doctorA": 11,
+            "hosDensity": 11,
+            "bedA": 11
+                } 
+            } 
+        }},
+    "闵行区": { "factors": 
+    { "popDensity": 9, 
+    "hDensity": 8, 
+    "rehDensity": 9, 
+    "GDP": 5, 
+    "edu": {
+        "value": null,
+        "subfactors": {
+            "areaDensity": 8, 
+            "enrollment": 11, 
+            "fsRatio": 12
+            }
+            },
+    "health": { 
+        "value": null,
+        "subfactors": {
+            "doctorA": 5,
+            "hosDensity": 8,
+            "bedA": 5
+                } 
+            } 
+        }},
+    "宝山区": {  "factors": 
+    { "popDensity": 8, 
+    "hDensity": 9, 
+    "rehDensity": 8, 
+    "GDP": 2, 
+    "edu": {
+        "value": null,
+        "subfactors": {
+            "areaDensity": 9, 
+            "enrollment": 13, 
+            "fsRatio": 13
+            }
+            },
+    "health": { 
+        "value": null,
+        "subfactors": {
+            "doctorA": 2,
+            "hosDensity": 9,
+            "bedA": 4
+                } 
+            } 
+        }},
+    "嘉定区": { "factors": 
+    { "popDensity": 11, 
+    "hDensity": 11, 
+    "rehDensity": 11, 
+    "GDP": 9, 
+    "edu": {
+        "value": null,
+        "subfactors": {
+            "areaDensity": 6, 
+            "enrollment": 10, 
+            "fsRatio": 16
+            }
+            },
+    "health": { 
+        "value": null,
+        "subfactors": {
+            "doctorA": 7,
+            "hosDensity": 6,
+            "bedA": 6
+                } 
+            } 
+        }},
+    "金山区": { "factors": 
+    { "popDensity": 15, 
+    "hDensity": 15, 
+    "rehDensity": 15, 
+    "GDP": 8, 
+    "edu":{
+        "value": null,
+        "subfactors": {
+            "areaDensity": 3, 
+            "enrollment": 14, 
+            "fsRatio": 9
+            }
+            },
+    "health": { 
+        "value": null,
+        "subfactors": {
+            "doctorA": 9,
+            "hosDensity": 4,
+            "bedA": 10
+                } 
+            } 
+        }},
+    "松江区": {"factors": 
+    { "popDensity": 12, 
+    "hDensity": 12.5, 
+    "rehDensity": 12, 
+    "GDP": 3, 
+    "edu": {
+        "value": null,
+        "subfactors": {
+            "areaDensity": 5, 
+            "enrollment": 15, 
+            "fsRatio": 15
+            }
+            },
+    "health": { 
+        "value": null,
+        "subfactors": {
+            "doctorA": 1,
+            "hosDensity": 2,
+            "bedA": 1
+                } 
+            } 
+        }},
+    "青浦区": { "factors": 
+    { "popDensity": 13, 
+    "hDensity": 13, 
+    "rehDensity": 14, 
+    "GDP": 6, 
+    "edu": {
+        "value": null,
+        "subfactors": {
+            "areaDensity": 2, 
+            "enrollment": 12, 
+            "fsRatio": 17
+            }
+            },
+    "health": { 
+        "value": null,
+        "subfactors": {
+            "doctorA": 6,
+            "hosDensity": 5,
+            "bedA": 7
+                } 
+            } 
+        }},
+    "奉贤区": { "factors": 
+    { "popDensity": 14, 
+    "hDensity": 13.5,
+     "rehDensity": 13, 
+     "GDP": 7, 
+     "edu": {
+        "value": null,
+        "subfactors": {
+            "areaDensity": 4, 
+            "enrollment": 16, 
+            "fsRatio": 14
+            }
+            },
+    "health": { 
+        "value": null,
+        "subfactors": {
+            "doctorA": 4,
+            "hosDensity": 3,
+            "bedA": 3
+                } 
+            } 
+        }},
+    "崇明区": {  "factors": 
+    { "popDensity": 16, 
+    "hDensity": 16, 
+    "rehDensity": 16,
+    "GDP": 1, 
+    "edu": {
+        "value": null,
+        "subfactors": {
+            "areaDensity": 1, 
+            "enrollment": 4, 
+            "fsRatio": 3
+            }
+            },
+    "health": { 
+        "value": null,
+        "subfactors": {
+            "doctorA": 8,
+            "hosDensity": 1,
+            "bedA": 9
+                } 
+            } 
+        }}
+}

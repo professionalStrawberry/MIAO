@@ -120,6 +120,8 @@
                 <li><b>Peiying Kam - Programmer</b></li>
                 <p> Peiying programmed the entirety of this website and the map and wrote all the introductory content, including this introduction.</p>
             </ul>
+            <h2> Lao Shi Introduction: Hong Miao </h2>
+            <p> Hong Miao is a very nice and smart teacher that we are pleasured to have as our mentor for this Junior Project. Hats off to Hong Miao! </p>
         </div>
 
         <!--articles-->
@@ -285,19 +287,81 @@
             <h2> The Map</h2>
             <p> Filter by different factors to customize based on what you think affects stray cats' distribution the most! 
                 Or just leave it all on to see the overall ranking we generated. </p>
-            <div id="filter-bar">
-                <label><input type="checkbox" class="factor-checkbox" value="popDensity" checked> Population Density</label>
-                <label><input type="checkbox" class="factor-checkbox" value="hDensity" checked> Housing Density</label>
-                <label><input type="checkbox" class="factor-checkbox" value="rehDensity" checked> Residential Housing Density</label>
-                <label><input type="checkbox" class="factor-checkbox" value="GDP" checked> GDP per Capita</label>
-                <label><input type="checkbox" class="factor-checkbox" value="edu" checked> Education</label>
-                <label><input type="checkbox" class="factor-checkbox" value="health" checked> Healthcare </label>
+            
+            <div class="map-and-controls">
+                <div id="map"></div>
+
+                <!---basic -->
+                <div class="filters">
+                    <h3> The Filters </h3>
+                    <div class="weight-input">
+                        <label>Population Density</label>
+                        <input type="range" min="0" max="5" step="0.1" value="1" oninput="updateWeight('popDensity', this.value)">
+                    </div>
+
+                    <div class="weight-input">
+                        <label>Housing Density</label>
+                        <input type="range" min="0" max="5" step="0.1" value="1" oninput="updateWeight('hDensity', this.value)">
+                    </div>
+
+                    <div class="weight-input">
+                        <label>Residential Housing Density</label>
+                        <input type="range" min="0" max="5" step="0.1" value="1" oninput="updateWeight('rehDensity', this.value)">
+                    </div>
+                    
+                    <div class="weight-input">
+                        <label>GDP</label>
+                        <input type="range" min="0" max="5" step="0.1" value="1" oninput="updateWeight('GDP', this.value)">
+                    </div>
+
+                    <!-- Composite -->
+                    <div class="weight-input">
+                        <label> Education </label>
+                        <input type="range" min="0" max="5" step="0.1" value="1" oninput="updateWeight('edu', this.value, true)">
+                        <div class="subfactors">
+                            <label>Area Density of Schools</label>
+                            <input type="range" min="0" max="5" value="1" oninput="updateSubWeight('edu', 'areaDensity',this.value)">
+                            <label>Enrollment</label>
+                            <input type="range" min="0" max="5" value="1" oninput="updateSubWeight('edu', 'enrollment', this.value)">
+                            <label>Faculty-Student Ratio</label>
+                            <input type="range" min="0" max="5" value="1" oninput="updateSubWeight('edu', 'fsRatio', this.value)">
+                        </div>
+                    </div>
+
+                    <div class="weight-input">
+                        <label> Healthcare </label>
+                        <input type="range" min="0" max="5" step="0.1" value="1" oninput="updateWeight('health', this.value, true)">
+                        <div class="subfactors">
+                            <label> Doctor Availability </label>
+                            <input type="range" min="0" max="5" value="1" oninput="updateSubWeight('health', 'doctorA', this.value)">
+                            <label> Hospital Density </label>
+                            <input type="range" min="0" max="5" value="1" oninput="updateSubWeight('health', 'hosDensity', this.value)">
+                            <label> Bed Availability </label>
+                            <input type="range" min="0" max="5" value="1" oninput="updateSubWeight('health', 'bedA', this.value)">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="map"></div>
+
+            <h2> Raw Data </h2>
+            <div class="columns">
+                <div class="normal-column">
+                </div>
+                <div class="normal-column">
+                </div>
+            </div>
+            <h2> Data Processing </h2>
         </div>
 
         <div id="research" class="content" style="display:none;">
             <h1>What affects the distribution of stray cats in cities?</h1>
+        </div>
+
+        <div id="contact" class="content" style="display:none;">
+            <h1>Contact Us</h1>
+            <p>If you have any questions or suggestions, please feel free to reach out to us!</p>
+            <p> Email: hongmiao@shsid.org </p>
+            <p> WeChat ID: hongmiao8818 </p>
         </div>
         <script src="js/script.js"></script>
         <script src="js/map.js"></script>

@@ -13,6 +13,7 @@ function showContent(section) {
     if (section === 'Map' && typeof map !== 'undefined') {
       setTimeout(() => {
         map.invalidateSize();
+        updateMapWithFilters();
       }, 200); // short delay allows CSS to finish showing the element
     }
 }

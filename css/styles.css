@@ -63,7 +63,9 @@ navbar li {
 }
 
 #map {
-    height: 400px; 
+    flex: 1;
+    height: 700px; 
+    min-width: 60%;
 }
 
 .logo-title {
@@ -188,4 +190,38 @@ navbar li {
 
 .normal-column {
    flex: 1;
+}
+
+.filters {
+  width: 350px; /* Fixed width for controls */
+  padding: 1rem;
+  overflow-y: auto; /* Scroll if content exceeds height */
+  background-color: #f9f9f9; /* Optional background */
+  border-left: 1px solid #ccc;
+  }
+
+.weight-input {
+  margin-bottom: 1.5rem;
+}
+
+.subfactors {
+    margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.subfactors label {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.subfactors input[type="range"] {
+    width: 100%;
+}
+
+.map-and-controls {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;  /* Or any height you want */
 }

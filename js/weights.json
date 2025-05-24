@@ -1,0 +1,22 @@
+{
+    "popDensity": 1, 
+    "hDensity": 1,
+    "rehDensity": 1,
+    "GDP": 1,
+    "edu": {
+        "weight": 1,
+        "subweights": {
+            "areaDensity": 1, 
+            "enrollement": 1, 
+            "fsRatio": 1
+        }
+    },
+    "health": { 
+        "weight": 1,
+        "subweights": {
+            "doctorA": 1,
+            "hosDensity": 1,
+            "bedA": 1
+        } 
+    }
+}
