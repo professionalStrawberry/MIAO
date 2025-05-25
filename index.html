@@ -285,8 +285,7 @@
         <div id="Map" class="content" style="display:none;">
             <h1>STRAY CAT DISTRIBUTION</h1>
             <h2> The Map</h2>
-            <p> Filter by different factors to customize based on what you think affects stray cats' distribution the most! 
-                Or just leave it all on to see the overall ranking we generated. </p>
+            <p> Change the proportion of different factors to customize based on what you think affects stray cats' distribution the most! </p>
             
             <div class="map-and-controls">
                 <div id="map"></div>
@@ -346,15 +345,78 @@
             <h2> Raw Data </h2>
             <div class="columns">
                 <div class="normal-column">
+                    <img src="graphs/raw1.png" alt="Raw Data 1">
+                    <img src="graphs/raw2.png" alt="Raw Data 2">
+                    <img src="graphs/raw3.png" alt="Raw Data 3">
                 </div>
                 <div class="normal-column">
+                    <img src="graphs/raw4.png" alt="Raw Data 4">
+                    <img src="graphs/raw5.png" alt="Raw Data 5">
+                    <img src="graphs/raw6.png" alt="Raw Data 6">
+                </div>
+                <div class="normal-column">
+                    <img src="graphs/raw7.png" alt="Raw Data 7">
+                    <img src="graphs/raw8.png" alt="Raw Data 8">
+                    <img src="graphs/raw9.png" alt="Raw Data 9">
+                </div>
+                <div class="normal-column">
+                    <img src="graphs/raw10.png" alt="Raw Data 10">
+                    <img src="graphs/raw11.png" alt="Raw Data 11">
                 </div>
             </div>
-            <h2> Data Processing </h2>
+            <h2> Processed Data </h2>
+            <div class="columns">
+                <div class="normal-column">
+                    <img src="graphs/processed1.png" alt="Processed Data 1">
+                    <img src="graphs/processed2.png" alt="Processed Data 2">
+                    <img src="graphs/processed3.png" alt="Processed Data 3">
+                </div>
+                <div class="normal-column">
+                    <img src="graphs/processed4.png" alt="Processed Data 4">
+                    <img src="graphs/processed5.png" alt="Processed Data 5">
+                    <img src="graphs/processed6.png" alt="Processed Data 6">
+                </div>
+                <div class="normal-column">
+                    <img src="graphs/processed7.png" alt="Processed Data 7">
+                    <img src="graphs/processed8.png" alt="Processed Data 8">
+                    <img src="graphs/processed9.png" alt="Processed Data 9">
+                    <img src="graphs/processed10.png" alt="Processed Data 10">
+                </div>
+            </div>
         </div>
 
         <div id="research" class="content" style="display:none;">
             <h1>What affects the distribution of stray cats in cities?</h1>
+            <p> Disclaimer: Due to limitations in data availability and previous studies, 
+                this map is a VERY rough estimate of the real distribution of cats, and should be used with caution. </p>
+            <p> According to studies by Kingsley<sup>1</sup>, McDonald and Skillings<sup>2</sup>, Flockhart et. al<sup>3</sup>, and Hou et. al<sup>4</sup>, 
+                the distribution of stray cats is affected by factors such as human population density, median income, 
+                IMD (Index of Multiple Deprivation<sup>5</sup>), type of land use etc. </p>
+            <p>Based on these studies and available data for Shanghai, we determined 6 factors affecting the population of stray cats<sup>6</sup>: </p>
+
+            <ul>
+                <li><strong>Population Density</strong> – The more humans living in a given region, the greater the cat population.</li>
+                <li><strong>Housing Density</strong> – The more buildings in a region, the greater the cat population.</li>
+                <li><strong>Type of Housing</strong> – The more residential area in a region, the greater the cat population.</li>
+                <li><strong>GDP per Capita</strong> – The higher the GDP per capita/income, the lower the cat population.</li>
+                <li><strong>Education</strong> – The number of schools, percentage of population enrolled, and number of teachers is evaluated to determine the availability of educational resources; the better the education, the fewer stray cats.</li>
+                <li><strong>Healthcare</strong> – The number of hospitals, number of hospital beds, and number of medical personnel is evaluated to determine the availability of healthcare resources; the better the healthcare, the fewer stray cats.</li>
+            </ul>
+            <p> To evaluate these factors, normalized values (resources available per person or per unit of land) were calculated 
+                for each metric and ranked. These rankings were used to calculate a score for each district, which would again be 
+                ranked to indicate which districts are likely to have higher densities of stray cats. The weight of each factor can 
+                be adjusted by the user based on what they believe is more important.</p>
+            <h2> Data Sources </h2>
+            <ol>
+                <li>Giles Kingsley, <em>DISTRIBUTION AND CORRELATES OF FERAL CAT TRAPPING PERMITS IN LOS ANGELES, CALIFORNIA</em>, December 2015.</li>
+                <li>Jennifer L. McDonald and Elizabeth Skillings, “Human Influences Shape the First Spatially Explicit National Estimate of Urban Unowned Cat Abundance,” <em>Scientific Reports</em> 11, no. 1 (October 28, 2021), <a href="https://doi.org/10.1038/s41598-021-99298-6" target="_blank">https://doi.org/10.1038/s41598-021-99298-6</a>.</li>
+                <li>D. T. Flockhart, D. R. Norris, and J. B. Coe, “Predicting Free‐roaming Cat Population Densities in Urban Areas,” <em>Animal Conservation</em> 19, no. 5 (March 1, 2016): 472–83, <a href="https://doi.org/10.1111/acv.12264" target="_blank">https://doi.org/10.1111/acv.12264</a>.</li>
+                <li>Yingxu Hou et al., “合肥市流浪动物活动规律的初步观察,” <em>野生动物学报</em>, no. 6 (December 3, 2009), <a href="https://doi.org/10.19711/j.cnki.issn2310-1490.2009.06.011" target="_blank">https://doi.org/10.19711/j.cnki.issn2310-1490.2009.06.011</a>.</li>
+                <li><em>“Broad themes [for measuring IMD] include income, employment, education, health, crime, barriers to housing and services, and the living environment.”</em></li>
+                <li>Health care and education are included as indicators of IMD.</li>
+             </ol>
+
+
         </div>
 
         <div id="contact" class="content" style="display:none;">

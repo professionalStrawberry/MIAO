@@ -192,6 +192,14 @@ navbar li {
    flex: 1;
 }
 
+.normal-column img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px; /* optional: for a nice rounded look */
+}
+
 .filters {
   width: 350px; /* Fixed width for controls */
   padding: 1rem;
